@@ -21,8 +21,9 @@ Asegurate de tener instalado en tu msquina local:
 
 - Crea las carpetas, para hacer todos los clone ahí dentro:
     - mkdir taller-k8s-web
-    ├──  mkdir web-content
-    └──  mkdir k8s-manifests
+    Dentro de la carpeta anterior, crear estas 2
+        - mkdir web-content
+        - mkdir k8s-manifests
 
 
 ## Pasos para Desplegar el Proyecto
