@@ -19,26 +19,22 @@ Asegurate de tener instalado en tu msquina local:
 
 ## Estructura del Proyecto
 
-- Crea las carpetas, para hacer todos los clone ahí dentro:
+- Crea la carpeta raiz para hacer todos los clone ahí dentro:
     - mkdir taller-k8s-web
-    - Dentro de la carpeta anterior, crear estas 2: 
-        - mkdir web-content
-        - mkdir k8s-manifests
-
 
 ## Pasos para Desplegar el Proyecto
 
-1) Movete a la carpeta de "web-content" y pon el siguiente comando para clonar el contenido web:
+1) En la carpeta raiz pon el siguiente comando para clonar el contenido web:
      - git clone https://github.com/helheim01/static-website
 
-2) Movete a la carpeta de "k8s-manifests" y pon el siguiente comando para clonar los archivos de configuración: 
+2) En la carpeta raiz pon el siguiente comando para clonar los archivos de configuración: 
     - git clone https://github.com/helheim01/k8s-manifests
 
 3) Arrancar minikube con: 
     - minikube start
 
 4) En una consola aparte (sin quitar la que ya tenías), ejecutar: 
-    - minikube mount minikube mount /ruta/local/taller-k8s-web/web-content:/mnt/web (Importante: Reemplazá "/ruta/local/taller-k8s-web/web-content" por el path donde clonaste "web-content".)
+    - minikube mount /ruta/local/carpeta_raiz/static-website:/mnt/web (Importante: Reemplazá "/ruta/local/taller-k8s-web/static-website" por el path donde clonaste "static-website".)
     - Este comando mantiene la conexión activa para sincronizar el contenido del sitio con el volumen de Minikube.
 
 5) Moverse a la carpeta "k8s-manifests" para poder aplicar los manifiestos:
@@ -55,7 +51,7 @@ Asegurate de tener instalado en tu msquina local:
 
 7) Hacer cambios en el Sitio Web (Opcional)
     - Si querés modificar el contenido del sitio (por ejemplo, cambiar el archivo index.html), seguí estos pasos:
-    - Editá los archivos dentro de la carpeta "web-content".
+    - Editá los archivos dentro de la carpeta "static-website".
     - Al estar usando un volumen montado con minikube mount, los cambios se reflejan directamente sin necesidad de reconstruir el contenedor (Solo tenes que recargar la página en el navegador para ver los cambios).
     - Recuerda: Durante todo este proceso, tenes que mantener la terminal con minikube mount activa.
 
