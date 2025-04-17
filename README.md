@@ -19,7 +19,7 @@ Asegurate de tener instalado en tu msquina local:
 
 ## Estructura del Proyecto
 
-- Crea la carpeta raiz para hacer todos los clone ahí dentro:
+- Crea la carpeta raiz en el Disco C para hacer todos los clone ahí dentro:
     - mkdir taller-k8s-web
 
 ## Pasos para Desplegar el Proyecto
@@ -34,7 +34,7 @@ Asegurate de tener instalado en tu msquina local:
     - minikube start
 
 4) En una consola aparte (sin quitar la que ya tenías), ejecutar: 
-    - minikube mount /ruta/local/carpeta_raiz/static-website:/mnt/web (Importante: Reemplazá "/ruta/local/taller-k8s-web/static-website" por el path donde clonaste "static-website".)
+    - minikube mount C:/taller-k8s-web/web-content:/mnt/web
     - Este comando mantiene la conexión activa para sincronizar el contenido del sitio con el volumen de Minikube.
 
 5) Moverse a la carpeta "k8s-manifests" para poder aplicar los manifiestos:
@@ -44,18 +44,16 @@ Asegurate de tener instalado en tu msquina local:
     - kubectl apply -f deployment/web-deployment-direct.yaml
     - kubectl apply -f service/web-service.yaml
 
-    -Nota: Estos comandos aplican la configuración a tu clúster local. No afectan el contenido de los repositorios, por lo que no es necesario hacer commits o pushes después de este paso.
-
 6) Una vez aplicados, ejecutar el siguiente comando para abrir el index en tu navegador: 
     - minikube service web-service
 
-7) Hacer cambios en el Sitio Web (Opcional)
+7) (Opcional) Hacer cambios en el Sitio Web 
     - Si querés modificar el contenido del sitio (por ejemplo, cambiar el archivo index.html), seguí estos pasos:
     - Editá los archivos dentro de la carpeta "static-website".
     - Al estar usando un volumen montado con minikube mount, los cambios se reflejan directamente sin necesidad de reconstruir el contenedor (Solo tenes que recargar la página en el navegador para ver los cambios).
     - Recuerda: Durante todo este proceso, tenes que mantener la terminal con minikube mount activa.
 
-8) Si queres hacer una comprobación del estado, para verificar que todos los recursos estén corriendo correctamente, usa estos comandos:
+8) (Opcional) Si queres hacer una comprobación del estado, para verificar que todos los recursos estén corriendo correctamente, usa estos comandos :
     - kubectl get all
     - kubectl logs -l app=web
 
