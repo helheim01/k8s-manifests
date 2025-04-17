@@ -8,4 +8,4 @@ spec:
   accessModes:
     - ReadWriteOnce
   hostPath:
-    path: C:/Users/Jero/taller-k8s-web/static-website
+    path: C:/taller-k8s-web/static-website
