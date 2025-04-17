@@ -32,27 +32,24 @@ Tener instalado en tu maquina local:
 
 4) Arrancar minikube con: 
     - minikube start
-
-5) En una consola aparte (sin quitar la que ya tenías), ejecutar: 
     - minikube mount C:/taller-k8s-web/static-website:/mnt/web
-      Este comando mantiene la conexión activa para sincronizar el contenido del sitio con el volumen de Minikube.
 
-6) Moverse a la carpeta "k8s-manifests" para poder aplicar los manifiestos:
-    - cd k8s-manifests
+5) En una consola aparte (sin quitar la que ya tenías), ejecutar:
+    - cd C:/taller-k8s-web/k8s-manifests
     - kubectl apply -f volume/pv.yaml
     - kubectl apply -f volume/pvc.yaml
     - kubectl apply -f deployment/web-deployment.yaml
     - kubectl apply -f deployment/web-deployment-direct.yaml
     - kubectl apply -f service/web-service.yaml
 
-7) Una vez aplicados, ejecutar el siguiente comando para abrir el index en el navegador: 
+6) Una vez aplicados, ejecutar el siguiente comando para abrir el index en el navegador: 
     - minikube service web-service
 
 
-8) (Opcional) Si queres hacer una comprobación del estado, para verificar que todos los recursos estén corriendo correctamente, usa estos comandos :
+7) (Opcional) Si queres hacer una comprobación del estado, para verificar que todos los recursos estén corriendo correctamente, usa estos comandos :
     - kubectl get all
     - kubectl logs -l app=web
 
-9) (Opcional) Detener el Entorno
+8) (Opcional) Detener el Entorno
     - minikube stop
     - minikube delete
