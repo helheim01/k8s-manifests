@@ -34,7 +34,7 @@ Asegurate de tener instalado en tu msquina local:
     - minikube start
 
 4) En una consola aparte (sin quitar la que ya tenías), ejecutar: 
-    - minikube mount C:/taller-k8s-web/web-content:/mnt/web
+    - minikube mount C:/taller-k8s-web/static-website:/mnt/web
     - Este comando mantiene la conexión activa para sincronizar el contenido del sitio con el volumen de Minikube.
 
 5) Moverse a la carpeta "k8s-manifests" para poder aplicar los manifiestos:
