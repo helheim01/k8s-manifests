@@ -42,7 +42,7 @@ Tener instalado en tu maquina local:
     - kubectl apply -f deployment/web-deployment-direct.yaml
     - kubectl apply -f service/web-service.yaml
 
-6) En la misna consola que usaste para el paso 5, ejecutar el siguiente comando para abrir el index en el navegador (Nota: Luego de aplicar este comando, se te dará una URL que puedes copiar y pegar en tu navegador; o puedes esperar un minuto, y volver a ejecutarlo para lo haga de manera automática): 
+6) En la misna consola que usaste para el paso 5, ejecutar el siguiente comando para abrir el index en el navegador (Nota: Luego de aplicar este comando, se te dará una URL que puedes copiar y pegar en tu navegador; o puedes esperar un minuto, y volver a ejecutarlo para que lo haga de manera automática): 
     - minikube service web-service
 
 
