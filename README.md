@@ -30,11 +30,10 @@ Tener instalado en tu maquina local:
 3) Poner el siguiente comando para clonar los archivos de configuración: 
     - git clone https://github.com/helheim01/k8s-manifests
 
-4) Arrancar minikube con: 
+4) Arrancar minikube con (¡Importante!: el comando minikube mount debe quedar activo en esa consola. No la cierres ni interrumpas): 
     - minikube start
     - minikube mount C:/taller-k8s-web/static-website:/mnt/web
-   ¡Importante!: el comando minikube mount debe quedar activo en esa consola. No la cierres ni interrumpas.
-
+  
 5) En una consola aparte (sin quitar la que ya tenías), ejecutar:
     - cd C:/taller-k8s-web/k8s-manifests
     - kubectl apply -f volume/pv.yaml
